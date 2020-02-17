@@ -1,0 +1,50 @@
+{
+    "development": {
+        "app": {
+            "port": 3000
+        },
+        "username": "junior",
+        "password": "",
+        "database": "tesserato_system",
+        "host": "localhost",
+        "dialect": "sqlite",
+        "logging": false,
+        "storage": "database.sqlite",
+        "define": {
+            "timestamps": true,
+            "underscored": true
+        }
+    },
+    "test": {
+        "app": {
+            "port": 3000
+        },
+        "username": "junior",
+        "password": "xxxx",
+        "database": "tesserato_system",
+        "host": "localhost",
+        "dialect": "sqlite",
+        "logging": false,
+        "storage": "database.sqlite",
+        "define": {
+            "timestamps": true,
+            "underscored": true
+        }
+    },
+    "production": {
+        "app": {
+            "port": 3000
+        },
+        "username": "junior",
+        "password": "xxxx",
+        "database": "tesserato_system",
+        "host": "localhost",
+        "dialect": "sqlite",
+        "logging": false,
+        "storage": "database.sqlite",
+        "define": {
+            "timestamps": true,
+            "underscored": true
+        }
+    }
+}
