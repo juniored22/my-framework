@@ -5,8 +5,9 @@
  */
 
 "use strict"
+
 const Sequelize = require('sequelize');
-const Mongoose = require('mongoose');
+const Mongoose  = require('mongoose');
 
 class Group extends Sequelize.Model {
   static sequelizeInit(connection) {
@@ -35,7 +36,7 @@ class Group extends Sequelize.Model {
   }
 
   /**
- * Handler OverwriteModelErrror  create sequelize 
+ * Handler OverwriteModelError  create sequelize 
  * Create method create mongoose model
  * Defalt sequelize
  * @param {*} obj 

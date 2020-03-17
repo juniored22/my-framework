@@ -1,0 +1,189 @@
+/**
+* Theme Dark css
+*
+*/
+
+.dark>div .btn {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  background: #282322;
+  border: solid 5px transparent;
+  background-clip: padding-box;
+  border-radius: 2px;
+  padding: 1rem;
+  margin: 13px auto;
+  box-shadow: -3px -3px 13px 3px #302b29, 4px 4px 15px 6px #0c0b0b;
+  animation: depress 75ms linear;
+}
+
+.dark>div .cicle {
+  border-radius: 100%;
+}
+
+.dark>div .btn i {
+  color: #5c524f;
+  text-shadow: -1px -1px black, 1px 1px #4e4643;
+}
+
+.dark>div .btn.active>i {
+  color: #69af74;
+}
+
+.dark>div .btn:active {
+  animation: press 50ms linear;
+  animation-fill-mode: forwards;
+}
+
+.dark>div .btn:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -5px;
+  border: 1px solid #332d2c;
+  border-radius: inherit;
+}
+
+.dark>div .btn:after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(-30deg, #2a2625 0%, #201c1b 100%);
+}
+
+@keyframes press {
+  100% {
+    box-shadow: -1px -1px 10px 2px #12100f, 3px 3px 10px 3px #302b29;
+  }
+}
+
+@keyframes depress {
+  0% {
+    box-shadow: -1px -1px 10px 2px #12100f, 3px 3px 10px 3px #302b29;
+  }
+  100% {
+    box-shadow: 7px 7px 20px 5px #0f0d0d, -3px -3px 20px 3px #463e3c;
+  }
+}
+
+.dark .btn {
+  color: #5a5a5a;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.dark .btn:active {
+  color: #38ec38;
+}
+
+/**
+* Theme White css
+*
+*/
+
+.white>div .btn {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  background: #ffffff;
+  border: solid 5px transparent;
+  background-clip: padding-box;
+  border-radius: 2px;
+  padding: 9px;
+  margin: 13px auto;
+  box-shadow: -3px -3px 13px 3px #ffffff, 4px 4px 15px 5px #9a9898;
+  animation: depress 75ms linear;
+}
+
+.white>div .cicle {
+  border-radius: 100%;
+  margin: 24px 12px;
+}
+
+.white>div .btn i {
+  color: #5c524f;
+  text-shadow: -1px -1px black, 1px 1px #4e4643;
+}
+
+.white>div .btn.active>i {
+  color: #69af74;
+}
+
+.white>div .btn:active {
+  animation: press 50ms linear;
+  animation-fill-mode: forwards;
+}
+
+.white>div .btn:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -5px;
+  border: 1px solid #332d2c;
+  border-radius: inherit;
+}
+
+.white>div .btn:after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(-30deg, #2a2625 0%, #201c1b 100%);
+}
+
+@keyframes press {
+  100% {
+    box-shadow: -1px -1px 10px 2px #ffffff, 3px 3px 10px 3px #cfc5c1;
+    ;
+  }
+}
+
+@keyframes depress {
+  0% {
+    box-shadow: -5px -5px 15px 5px #ffffff, 4px 4px 15px 6px #a7a7a7;
+  }
+  100% {
+    box-shadow: -3px -3px 13px 3px #ffffff, 4px 4px 15px 6px #a7a7a7;
+  }
+}
+
+.white .btn {
+  color: #5a5a5a;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.white .btn:active {
+  color: #38ec38;
+}
+
+.active {
+  content: "teste";
+  color: #38ec38 !important;
+  box-shadow: -1px -1px 10px 2px #ffffff, 3px 3px 10px 3px #cfc5c1 !important;
+}
+
+.active::after {
+  content: " teste" !important;
+}

@@ -6,7 +6,6 @@ function encrypt(password) {
 }
  
 var encrypt_password = async (req, res, next) => {
-
   if(req.body.password != undefined){
     req.body.password = await encrypt(req.body.password)
   }

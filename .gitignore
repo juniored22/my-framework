@@ -3,8 +3,24 @@ database.sqlite
 package-lock.json
 
 
-# Created by https://www.gitignore.io/api/node
-# Edit at https://www.gitignore.io/?templates=node
+
+# Created by https://www.gitignore.io/api/node,react,linux
+# Edit at https://www.gitignore.io/?templates=node,react,linux
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### Node ###
 # Logs
@@ -112,4 +128,17 @@ dist/
 tmp/
 temp/
 
-# End of https://www.gitignore.io/api/node
+### react ###
+.DS_*
+**/*.backup.*
+**/*.back.*
+
+node_modules
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# End of https://www.gitignore.io/api/node,react,linux

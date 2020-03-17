@@ -9,34 +9,34 @@ const Group = require('../Model/Group');
 
 module.exports = {
 
-  async createGroup(req, res){
-    const {name} = req.body;
-    const group = await Group.create({name});
+  async createGroup(req, res) {
+    const { name }  = req.body;
+    const group     = await Group.create({ name });
 
     return res.json(group)
   },
 
-  async findAllGroup(req, res){
+  async findAllGroup(req, res) {
     const groups = await Group.findAll()
 
     return res.json(groups)
   },
 
   async findGroup(req, res) {
-    const {group_id} = req.params;
-    const group = await Group.findByPk(group_id);
+    const { group_id }  = req.params;
+    const group         = await Group.findByPk(group_id);
 
-    if(!group){
-      return res.status(400).json({error: 'Group not found'})
+    if (!group) {
+      return res.status(400).json({ error: 'Group not found' })
     }
 
     return res.json(group)
   },
 
-  async updateGroup(req, res){
-    const {group_id} = req.params;
-    const {name} = req.body;
-    const result = await Group.update({
+  async updateGroup(req, res) {
+    const { group_id }  = req.params;
+    const { name }      = req.body;
+    const result        = await Group.update({
       name: name
     }, {
       where: {

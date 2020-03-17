@@ -5,19 +5,19 @@
  */
 
 'use strict';
-const User  = require('../Model/User')
+const User      = require('../Model/User')
 const Sequelize = require('sequelize');
 const debug     = require('debug')('http')
-const Op    = Sequelize.Op;
+const Op        = Sequelize.Op;
 
 module.exports = {
 
-  async createUser(req, res){
-    const {name, email, password} = req.body;
+  async createUser(req, res) {
+    const { name, email, password } = req.body;
     let user = {}
 
     try {
-      user = await User.create({name, email, password});
+      user = await User.create({ name, email, password });
     } catch (error) {
       console.log(error);
       user.erro = error
@@ -26,33 +26,33 @@ module.exports = {
     return res.json(user)
   },
 
-  async findAllUsers(req, res){
+  async findAllUsers(req, res) {
     let users = {}
     try {
       users = await User.findAll()
     } catch (err) {
       users.error = err
     }
-    
+
     return res.json(users)
   },
 
   async findUser(req, res) {
-    const {user_id} = req.params;
-    const user = await User.findByPk(user_id);
+    const { user_id } = req.params;
+    const user    = await User.findByPk(user_id);
 
-    if(!user){
-      return res.status(400).json({error: 'User not found'})
+    if (!user) {
+      return res.status(400).json({ error: 'User not found' })
     }
 
     return res.json(user)
   },
 
-  async updateUser(req, res){
-    const {user_id} = req.params;
-    const {name, email, password} = req.body;
+  async updateUser(req, res) {
+    const { user_id } = req.params;
+    const { name, email, password } = req.body;
     const result = await User.update({
-      name: name, email:email, password:password
+      name: name, email: email, password: password
     }, {
       where: {
         id: {

@@ -1,0 +1,44 @@
+.input_ts {
+    min-height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border-width: 0px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+}
+
+.input_ts:focus {
+    outline: none;
+}
+
+.dark>div .input_ts {
+    color: #53584a;
+    border-radius: 7px;
+    background: #211d1c;
+    box-shadow: inset 4px 4px 7px #161413, inset -4px -4px 7px #24201f;
+}
+
+.dark>div .input_ts::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #53584a;
+    opacity: 1;
+    /* Firefox */
+}
+
+.white>div .input_ts {
+    color: #53584a;
+    border-radius: 7px;
+background: #e7f1f6;
+box-shadow: inset 5px 5px 11px #d0d9dd, 
+            inset -5px -5px 11px #feffff;
+}
+
+.white>div .input_ts::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #53584a;
+    opacity: 1;
+    /* Firefox */
+}

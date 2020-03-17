@@ -7,17 +7,44 @@
 "use strict"
 const UserController = require('../App/Controller/UserController');
 const GroupController = require('../App/Controller/GroupController');
-const encryptPass    = require('../middleware/auth')
-
+const encryptPass = require('../middleware/auth')
+const auth = require('../App/Auth/auth')
+const cors = require('../middleware/cors')
 
 module.exports = (app) => {
 
-    app.use(encryptPass);
+    /**
+    * Middleware cors resolvendo Cross-origin resource sharing
+    */
+    app.use(cors)
+
+    /**
+     * Middleware ecryptar request passwors.
+     * Os middlewares são funções que podem tratar os inputs e outputs das rotas antes e ou 
+     * depois que uma rota é processada, ou seja, você pode criar um middleware que intercepta 
+     * e verificar se uma requisição esta enviando um header específico e que caso o mesmo não
+     * esteja enviando o header ela retorne uma tela de erro para o usuário, negando a
+     * requisição de acessar uma determinada rota da aplicação, neste caso você criou e 
+     * inejtou um middleware que trata uma pré-requisição.
+     */
+    app.use('/create/user', encryptPass);
 
     app.get('/', function (req, res) {
         res.render('index', { title: 'Hey', message: 'Hello there!' });
     });
 
+    /**
+     * Auth method
+     * @param {email,password} req 
+     * @param {token} res 
+     */
+    app.post('/auth', (req, res) => {
+        let { email, password } = req.body
+        auth({ email, password })
+            .then((data) => {
+                res.json(data);
+            })
+    })
 
     /**
      * Routers HTTP Users
